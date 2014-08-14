@@ -1,0 +1,22 @@
+{
+    "name": "Toy Password Manager",
+    "short_name": "TPM",
+    "description": "A toy password manager to ",
+    "version": "0.1",
+    "permissions": ["proxy", "storage", "notifications", "tabs", "cookies", "webRequest", "webRequestBlocking", "http://*/*", "https://*/*", "identity"],
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "src/libs/jquery-2.1.1.min.js",
+            "src/manager.js"
+        ]
+    },
+    "content_scripts": [{
+            "matches": ["<all_urls>"],
+            "js": [
+                "src/libs/zepto.min.js",
+                "src/contentscript.js"
+            ]
+        }],
+    "manifest_version": 2
+}
